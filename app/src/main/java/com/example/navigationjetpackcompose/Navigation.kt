@@ -63,15 +63,18 @@ fun MainScreen(navController: NavController) {
             .padding(horizontal = 50.dp)
     ) {
         TextField(
+
             value = text,
             onValueChange = {
                 text = it
             },
+
             modifier = Modifier.fillMaxWidth()
+
         )
         Spacer(modifier = Modifier.height(8.dp))
         Button(onClick = {
-                navController.navigate(Screen.DetailScreen.route)
+                navController.navigate(Screen.DetailScreen.withArgs(text))
         },
         modifier = Modifier.align(Alignment.End)
             ) {
